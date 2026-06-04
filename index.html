@@ -121,7 +121,7 @@
     }
 
     /* ── 按钮 ── */
-    .btn { padding: 9px 18px; border-radius: 7px; border: none; cursor: pointer; font-size: 0.87rem; font-weight: 600; font-family: inherit; transition: 0.2s ease; display: -ms-inline-flexbox; display: inline-flex; -ms-flex-align: center; align-items: center; gap: 4px; }
+    .btn { padding: 9px 18px; border-radius: 7px; border: none; cursor: pointer; font-size: 0.87rem; font-weight: 600; font-family: inherit; transition: 0.2s ease; display: -ms-inline-flexbox; display: inline-flex; -ms-flex-align: center; align-items: center; gap: 6px; }
     .btn-pri { background: #1a365d; color: #ffffff; box-shadow: 0 2px 6px rgba(26,54,93,0.25); }
     .btn-pri:hover { background: #1e4a7a; transform: translateY(-1px); }
     .btn-out { background: #ffffff; border: 1.5px solid #cbd5e1; color: #334155; }
@@ -134,13 +134,21 @@
     .toolbar { display: -ms-flexbox; display: flex; gap: 8px; -ms-flex-wrap: wrap; flex-wrap: wrap; -ms-flex-align: center; align-items: center; margin-bottom: 16px; }
     .toolbar input[type="text"] { -ms-flex: 1; flex: 1; min-width: 140px; border: 1.5px solid #cbd5e1; border-radius: 7px; padding: 8px 11px; font-size: 0.84rem; background: #ffffff; }
     .toolbar input[type="text"]:focus { border-color: #3b82f6; outline: none; }
+    
+    /* ── 筛选栏 ── */
+    .filter-bar { display: -ms-flexbox; display: flex; gap: 8px; -ms-flex-wrap: wrap; flex-wrap: wrap; -ms-flex-align: center; align-items: center; margin-bottom: 16px; padding: 12px 16px; background: #f8fafc; border-radius: 8px; border: 1px solid #e2e8f0; }
+    .filter-bar .filter-label { font-size: 0.84rem; font-weight: 600; color: #334155; }
+    .filter-bar .filter-chip { display: -ms-inline-flexbox; display: inline-flex; -ms-flex-align: center; align-items: center; gap: 6px; background: #ffffff; border: 1px solid #cbd5e1; border-radius: 6px; padding: 6px 10px; font-size: 0.8rem; cursor: pointer; transition: 0.2s ease; }
+    .filter-bar .filter-chip:hover { border-color: #3b82f6; background: #f0f4ff; }
+    .filter-bar .filter-chip.active { background: #3b82f6; color: #ffffff; border-color: #3b82f6; }
+    .filter-bar .filter-clear { font-size: 0.8rem; cursor: pointer; color: #3b82f6; text-decoration: underline; }
 
     /* ── 项目列表 ── */
     .project-item { border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px 18px; margin-bottom: 10px; background: #ffffff; transition: 0.2s ease; }
     .project-item:hover { border-color: #cbd5e1; box-shadow: 0 4px 8px rgba(0,0,0,0.06); }
-    .proj-top { display: -ms-flexbox; display: flex; -ms-flex-align: start; align-items: flex-start; -ms-flex-pack: justify; justify-content: space-between; -ms-flex-wrap: wrap; flex-wrap: wrap; gap: 8px; margin-bottom: 8px; }
+    .proj-top { display: -ms-flexbox; display: flex; -ms-flex-align: start; align-items: flex-start; -ms-flex-pack: justify; justify-content: space-between; -ms-flex-wrap: wrap; flex-wrap: wrap; gap: 10px; }
     .proj-name { font-weight: 700; font-size: 1rem; }
-    .proj-index { display: -ms-inline-flexbox; display: inline-flex; -ms-flex-align: center; align-items: center; -ms-flex-pack: center; justify-content: center; width: 30px; height: 30px; background: #eef2ff; color: #1a365d; border-radius: 50%; font-size: 0.78rem; font-weight: 700; margin-right: 8px; }
+    .proj-index { display: -ms-inline-flexbox; display: inline-flex; -ms-flex-align: center; align-items: center; -ms-flex-pack: center; justify-content: center; width: 30px; height: 30px; background: #e2e8f0; border-radius: 50%; font-size: 0.8rem; font-weight: 700; color: #1a365d; }
     .empty-state { text-align: center; padding: 60px 20px; color: #94a3b8; font-size: 0.95rem; }
 
     /* ── 字段管理面板 ── */
@@ -167,16 +175,16 @@
     .field-delete-btn { background: none; border: 1px solid #dc2626; color: #dc2626; padding: 4px 8px; border-radius: 4px; cursor: pointer; font-size: 0.8rem; }
 
     /* ── 模态 ── */
-    .modal-overlay { position: fixed; top: 0; right: 0; bottom: 0; left: 0; background: rgba(15,23,42,0.55); z-index: 200; display: -ms-flexbox; display: flex; -ms-flex-align: start; align-items: flex-start; -ms-flex-pack: center; justify-content: center; padding: 40px 16px; overflow-y: auto; -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); }
+    .modal-overlay { position: fixed; top: 0; right: 0; bottom: 0; left: 0; background: rgba(15,23,42,0.55); z-index: 200; display: -ms-flexbox; display: flex; -ms-flex-align: start; align-items: flex-start; -ms-flex-pack: center; justify-content: center; padding-top: 40px; }
     .modal-overlay.hidden { display: none; }
     .modal-content { background: #ffffff; border-radius: 14px; padding: 24px 28px; width: 100%; max-width: 900px; box-shadow: 0 16px 32px rgba(0,0,0,0.12); animation: fadeIn 0.25s ease; }
-    .modal-head { display: -ms-flexbox; display: flex; -ms-flex-align: center; align-items: center; -ms-flex-pack: justify; justify-content: space-between; margin-bottom: 18px; padding-bottom: 10px; border-bottom: 2px solid #eef2ff; }
+    .modal-head { display: -ms-flexbox; display: flex; -ms-flex-align: center; align-items: center; -ms-flex-pack: justify; justify-content: space-between; margin-bottom: 18px; padding-bottom: 10px; border-bottom: 1px solid #e2e8f0; }
     .modal-head h3 { font-size: 1.18rem; font-weight: 700; color: #1a365d; }
-    .modal-close { background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #94a3b8; width: 36px; height: 36px; display: -ms-flexbox; display: flex; -ms-flex-align: center; align-items: center; -ms-flex-pack: center; justify-content: center; border-radius: 50%; transition: 0.2s ease; }
+    .modal-close { background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #94a3b8; width: 36px; height: 36px; display: -ms-flexbox; display: flex; -ms-flex-align: center; align-items: center; -ms-flex-pack: center; justify-content: center; }
     .modal-close:hover { background: #f1f5f9; color: #0f172a; }
 
     /* ── Toast ── */
-    .toast { position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%); padding: 12px 26px; border-radius: 9999px; font-size: 0.86rem; z-index: 300; opacity: 0; transition: opacity 0.2s; pointer-events: none; box-shadow: 0 8px 16px rgba(0,0,0,0.08); font-weight: 500; background: #1e293b; color: #ffffff; }
+    .toast { position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%); padding: 12px 26px; border-radius: 9999px; font-size: 0.86rem; z-index: 300; opacity: 0; transition: opacity 0.2s; pointer-events: none; color: #ffffff; }
     .toast.show { opacity: 1; }
     .toast.success { background: #059669; }
     .toast.error { background: #dc2626; }
@@ -245,6 +253,14 @@
     </header>
     <div class="container">
         <div class="stats-row" id="statistics"></div>
+        
+        <!-- 筛选栏 -->
+        <div class="filter-bar" id="filter-bar" style="display:none;">
+            <span class="filter-label">已选择：</span>
+            <div id="filter-chips-container"></div>
+            <span class="filter-clear" onclick="clearFilters()">清除所有</span>
+        </div>
+        
         <div class="card">
             <div class="card-header" id="list-toggle-header">
                 <h2>📋 项目列表</h2>
@@ -259,6 +275,7 @@
                         <option value="amount-asc">按预算最低</option>
                     </select>
                     <input type="text" id="search-text" placeholder="搜索项目名称..." oninput="renderProjects()">
+                    <button class="btn btn-out btn-sm" id="toggle-filters" onclick="toggleFiltersPanel()">🔽 筛选</button>
                 </div>
                 <div id="project-list"></div>
             </div>
@@ -391,6 +408,8 @@
     var customFields = [];
     var editingId = null;
     var toastTimer = null;
+    var activeFilters = {};
+    var showFiltersPanel = false;
 
     // ══════════════════════════════════════════
     // 工具函数
@@ -555,6 +574,112 @@
     });
 
     // ══════════════════════════════════════════
+    // 统计卡片功能
+    // ══════════════════════════════════════════
+    function renderStatistics() {
+        var stats = $('#statistics');
+        if (!stats) return;
+
+        var total = projects.length;
+        var approved = projects.filter(function(p) { return p.isApproved === '是'; }).length;
+        var inProgress = projects.filter(function(p) { return p.progress && p.progress !== '完工'; }).length;
+        var completed = projects.filter(function(p) { return p.progress === '完工'; }).length;
+        var totalBudget = 0;
+        for (var i = 0; i < projects.length; i++) {
+            totalBudget += parseFloat(projects[i].contractAmount) || 0;
+        }
+
+        var html = '';
+        html += '<div class="stat-card" onclick="filterBy(\'all\')" title="点击查看所有项目">';
+        html += '<div class="stat-val">' + total + '</div>';
+        html += '<div class="stat-lbl">总项目数</div>';
+        html += '</div>';
+        
+        html += '<div class="stat-card" onclick="filterBy(\'approved\')" title="点击查看已立项项目">';
+        html += '<div class="stat-val">' + approved + '</div>';
+        html += '<div class="stat-lbl">已立项</div>';
+        html += '</div>';
+        
+        html += '<div class="stat-card" onclick="filterBy(\'inProgress\')" title="点击查看进行中项目">';
+        html += '<div class="stat-val">' + inProgress + '</div>';
+        html += '<div class="stat-lbl">进行中</div>';
+        html += '</div>';
+        
+        html += '<div class="stat-card" onclick="filterBy(\'completed\')" title="点击查看已完工项目">';
+        html += '<div class="stat-val">' + completed + '</div>';
+        html += '<div class="stat-lbl">已完工</div>';
+        html += '</div>';
+        
+        html += '<div class="stat-card" title="总预算金额">';
+        html += '<div class="stat-val">¥' + fmtMoney(totalBudget) + '</div>';
+        html += '<div class="stat-lbl">总预算</div>';
+        html += '</div>';
+
+        stats.innerHTML = html;
+    }
+
+    // ══════════════════════════════════════════
+    // 筛选功能
+    // ══════════════════════════════════════════
+    window.filterBy = function(type) {
+        activeFilters = {};
+        if (type === 'approved') {
+            activeFilters['isApproved'] = '是';
+        } else if (type === 'inProgress') {
+            activeFilters['progress'] = ['查看现场','方案制定','预算编制','待立项','待批复','开工建设'];
+        } else if (type === 'completed') {
+            activeFilters['progress'] = '完工';
+        }
+        renderProjects();
+        updateFilterBar();
+    };
+
+    function updateFilterBar() {
+        var filterBar = $('#filter-bar');
+        var chipsContainer = $('#filter-chips-container');
+        
+        if (!Object.keys(activeFilters).length) {
+            filterBar.style.display = 'none';
+            return;
+        }
+        
+        filterBar.style.display = '-ms-flexbox';
+        filterBar.style.display = 'flex';
+        
+        var html = '';
+        for (var key in activeFilters) {
+            var val = activeFilters[key];
+            var label = '';
+            for (var i = 0; i < customFields.length; i++) {
+                if (customFields[i].id === key) {
+                    label = customFields[i].label;
+                    break;
+                }
+            }
+            var displayVal = Array.isArray(val) ? val.join(',') : val;
+            html += '<span class="filter-chip active">' + escHtml(label) + ': ' + escHtml(displayVal) + ' <span style="cursor:pointer;" onclick="removeFilter(\'' + key + '\')">✕</span></span>';
+        }
+        chipsContainer.innerHTML = html;
+    }
+
+    window.removeFilter = function(key) {
+        delete activeFilters[key];
+        renderProjects();
+        updateFilterBar();
+    };
+
+    window.clearFilters = function() {
+        activeFilters = {};
+        renderProjects();
+        updateFilterBar();
+    };
+
+    window.toggleFiltersPanel = function() {
+        // 在这里可以展开更多筛选选项
+        showToast('💡 点击统计卡片快速筛选，或手动在项目列表进行筛选', 'success');
+    };
+
+    // ══════════════════════════════════════════
     // 自定义字段管理
     // ══════════════════════════════════════════
     window.openFieldsConfig = function() {
@@ -575,7 +700,7 @@
             html += '<div class="field-item-controls">';
             html += '<button class="field-toggle-lock' + (field.locked ? ' locked' : '') + '" onclick="toggleFieldLock(' + i + ')">' + (field.locked ? '🔒 锁定' : '🔓 未锁') + '</button>';
             if (!field.locked) {
-                html += '<button class="btn btn-out btn-xs" onclick="editField(' + i + ')">编辑</button>';
+                html += '<button class="btn btn-out btn-sm" onclick="editField(' + i + ')">编辑</button>';
                 html += '<button class="field-delete-btn" onclick="deleteField(' + i + ')">✕</button>';
             }
             html += '</div>';
@@ -649,9 +774,22 @@
         var sort = ($('#sort-by') ? $('#sort-by').value : 'date-desc') || 'date-desc';
         var search = ($('#search-text') ? $('#search-text').value : '').trim().toLowerCase();
         
+        // 应用搜索
         if (search) {
             list = list.filter(function(p) {
                 return (p.name || '').toLowerCase().indexOf(search) !== -1;
+            });
+        }
+
+        // 应用筛选
+        for (var key in activeFilters) {
+            var filterVal = activeFilters[key];
+            list = list.filter(function(p) {
+                if (Array.isArray(filterVal)) {
+                    return filterVal.indexOf(p[key]) !== -1;
+                } else {
+                    return p[key] === filterVal;
+                }
             });
         }
 
@@ -717,13 +855,13 @@
         for (var i = 0; i < projects.length; i++) { if (projects[i].id === id) { p = projects[i]; break; } }
         if (!p || !confirm('删除「' + p.name + '」？')) return;
         projects = projects.filter(function(x) { return x.id !== id; });
-        saveData(); renderProjects();
+        saveData(); renderProjects(); renderStatistics();
     };
 
     window.clearAll = function() {
         if (!confirm('清空全部数据？此操作不可恢复！')) return;
         if (!confirm('再次确认：将删除所有项目数据')) return;
-        projects = []; saveData(); renderProjects();
+        projects = []; saveData(); renderProjects(); renderStatistics();
     };
 
     window.openNewProject = function() {
@@ -804,7 +942,7 @@
             projects.push(data);
         }
         
-        saveData(); renderProjects(); closeModal();
+        saveData(); renderProjects(); renderStatistics(); closeModal();
         showToast(editingId ? '✅ 项目更新成功' : '✅ 项目创建成功', 'success');
     }
     window.saveProject = saveProject;
@@ -888,7 +1026,7 @@
                 if (!newProjects.length) { showToast('未解析到有效项目','error'); return; }
                 if (confirm('解析到 ' + newProjects.length + ' 个项目，是否合并导入？')) {
                     projects = projects.concat(newProjects);
-                    saveData(); renderProjects();
+                    saveData(); renderProjects(); renderStatistics();
                     showToast('成功导入 ' + newProjects.length + ' 个项目','success');
                 }
             } catch(ex) { showToast('导入失败','error'); }
@@ -915,7 +1053,7 @@
                     saveFieldsConfig();
                 }
                 saveData();
-                renderProjects();
+                renderProjects(); renderStatistics();
                 showToast('✅ 已恢复 ' + count + ' 个项目','success');
             } catch(ex) { showToast('导入失败','error'); }
         };
@@ -953,6 +1091,7 @@
     function initApp() {
         loadData();
         loadFieldsConfig();
+        renderStatistics();
         renderProjects();
     }
 
